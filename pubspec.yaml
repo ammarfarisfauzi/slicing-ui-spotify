@@ -1,0 +1,66 @@
+name: spotify_slicing_ui
+description: "A new Flutter project."
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0" # Sesuaikan dengan versi Flutter Anda
+
+# Dependencies specify other packages that your package needs in order to work.
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  get: ^4.6.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+# Flutter specific configurations
+flutter:
+  uses-material-design: true
+
+  # Assets section
+  assets:
+    - assets/images/girl_with_butterfly.jpg 
+    - assets/images/like_music.jpg
+    - assets/images/xad.jpg
+    - assets/images/study.jpg
+    - assets/images/listening_with_her.jpg
+    - assets/images/artic_monkey.jpg
+    - assets/images/lofi_girl.jpg
+    - assets/images/tyler_creator.jpg
+    - assets/images/luciddream.jpg
+    - assets/images/joji.jpg
+    - assets/images/blue_young_kai.jpg
+    - assets/images/show_me_how.jpg
+    - assets/images/about_you.jpg
+    - assets/images/lana_del_rey.jpg
+    - assets/images/albert_king.jpg
+    - assets/images/joji_pfp.jpg
+    - assets/images/jmk48.png
+    - assets/images/young_stonner.jpg
+    - assets/images/darkfantasy.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
