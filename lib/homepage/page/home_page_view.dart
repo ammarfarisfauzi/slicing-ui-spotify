@@ -17,71 +17,74 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF121212),
         elevation: 0,
-        title: Row(
-          children: [
-            ClipOval(
-              child: Image.asset(
-                'assets/images/girl_with_butterfly.jpg',
+        title: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ClipOval(
+                child: Image.asset(
+                  'assets/images/girl_with_butterfly.jpg',
+                  height: 32,
+                  width: 32,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(width: 7),
+              SizedBox(
+                width: 70,
                 height: 32,
-                width: 32,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const SizedBox(width: 7),
-            SizedBox(
-              width: 70,
-              height: 32,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF1ED760),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF1ED760),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: const Text(
+                    "All",
+                    style: TextStyle(color: Colors.black, fontSize: 11),
                   ),
                 ),
-                child: const Text(
-                  "All",
-                  style: TextStyle(color: Colors.black, fontSize: 11),
-                ),
               ),
-            ),
-            const SizedBox(width: 7),
-            SizedBox(
-              width: 80,
-              height: 32,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF333333),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+              const SizedBox(width: 7),
+              SizedBox(
+                width: 80,
+                height: 32,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF333333),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: const Text(
+                    "Music",
+                    style: TextStyle(color: Colors.white, fontSize: 11),
                   ),
                 ),
-                child: const Text(
-                  "Music",
-                  style: TextStyle(color: Colors.white, fontSize: 11),
-                ),
               ),
-            ),
-            const SizedBox(width: 7),
-            SizedBox(
-              width: 90,
-              height: 32,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF333333),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+              const SizedBox(width: 7),
+              SizedBox(
+                width: 90,
+                height: 32,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF333333),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: const Text(
+                    "Podcast",
+                    style: TextStyle(color: Colors.white, fontSize: 11),
                   ),
                 ),
-                child: const Text(
-                  "Podcast",
-                  style: TextStyle(color: Colors.white, fontSize: 11),
-                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -89,26 +92,7 @@ class HomeView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            FirstWidgetSpotify(
-              imageUrl1: 'assets/images/like_music.jpg',
-              title1: 'Liked Songs',
-              imageUrl2: 'assets/images/xad.jpg',
-              title2: 'I Miss Her',
-            ),
-            const SizedBox(height: 10),
-            FirstWidgetSpotify(
-              imageUrl1: 'assets/images/study.jpg',
-              title1: 'Study And Chill',
-              imageUrl2: 'assets/images/listening_with_her.jpg',
-              title2: 'Listen to him',
-            ),
-            const SizedBox(height: 10),
-            FirstWidgetSpotify(
-              imageUrl1: 'assets/images/artic_monkey.jpg',
-              title1: 'Artic Monkeys',
-              imageUrl2: 'assets/images/lofi_girl.jpg',
-              title2: 'Lofi Girl',
-            ),
+            FirstWidgetSpotify(),  
             const SizedBox(height: 30),
             const Text(
               "You've been playing a lot lately",
