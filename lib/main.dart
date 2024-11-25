@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Spotify UI',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green), // Sesuai dengan warna Spotify
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green), 
         useMaterial3: true,
       ),
-      debugShowCheckedModeBanner: false, // Menghilangkan banner debug
-      home: HomeView  (), // Mengatur halaman pertama aplikasi
+      debugShowCheckedModeBanner: false,
+      home: HomeView  (), 
     );
   }
 }
