@@ -38,47 +38,59 @@ class RecentlyPlayedSongs extends StatelessWidget {
       },
     ];
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: recentlyPlayed.map((item) {
-          return Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(item['artist']!.isEmpty ? 100 : 13),
-                  child: Image.asset(
-                    item['image'] ?? '',
-                    width: 150,
-                    height: 150,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  item['title'] ?? '',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                if (item['artist'] != null && item['artist']!.isNotEmpty)
-                  Text(
-                    item['artist'] ?? '',
-                    style: const TextStyle(
-                      color: Colors.white70,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 13,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isSmallScreen = constraints.maxWidth < 400;
+
+        return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: recentlyPlayed.map((item) {
+              final imageSize = isSmallScreen ? 150.0 : 120.0;
+              final fontSizeTitle = isSmallScreen ? 11.0 : 13.0;
+              final fontSizeArtist = isSmallScreen ? 10.0 : 13.0;
+
+              return Padding(
+                padding: EdgeInsets.only(right: isSmallScreen ? 8 : 12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                        item['artist']!.isEmpty ? imageSize / 2 : 13,
+                      ),
+                      child: Image.asset(
+                        item['image'] ?? '',
+                        width: imageSize,
+                        height: imageSize,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            );
-          }).toList(),
-        ),
-      );
-    }
+                    const SizedBox(height: 8),
+                    Text(
+                      item['title'] ?? '',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: fontSizeTitle,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    if (item['artist'] != null && item['artist']!.isNotEmpty)
+                      Text(
+                        item['artist'] ?? '',
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w400,
+                          fontSize: fontSizeArtist,
+                        ),
+                      ),
+                  ],
+                ),
+              );
+            }).toList(),
+          ),
+        );
+      },
+    );
   }
+}
